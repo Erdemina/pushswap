@@ -26,19 +26,15 @@ SRCS = ./commands/push.c \
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)%.o)
 
-# Tüm süreci başlatan hedef
 all: $(NAME)
 
-# Obj klasörünü oluşturma ve .o dosyalarını derleme
 $(OBJ_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# functions derleme
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
-# Temizlik kuralları
 clean:
 	$(RM) $(OBJ_DIR)
 
