@@ -50,7 +50,7 @@ void	init_stack_a(t_stack **a, char **argv)
 	{
 		if (check_string(argv[i]))
 			free_errors(a);
-		n = ft_atoi(argv[i]);
+		n = ft_atoi2(argv[i]);
 		if (n > INT_MAX || n < INT_MIN) 
 			free_errors(a);
 		if (check_duplicate(*a, (int)n))

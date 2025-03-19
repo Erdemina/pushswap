@@ -9,9 +9,13 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0])) 
 		return (1);
-	else if (argc == 2) 
-		argv = ft_split(argv[1], ' '); 
-	init_stack_a(&a, argv + 1); 
+	else if (argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+		init_stack_a(&a, argv);
+	}
+	else
+		init_stack_a(&a,&argv[1]);
 	if (!stack_sorted(a)) 
 	{
 		if (stack_size(a) == 2) 

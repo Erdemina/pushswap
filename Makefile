@@ -12,6 +12,7 @@ SRC_DIR = srcs/
 OBJ_DIR = obj/
 
 SRCS = ./commands/push.c \
+       ./commands/ft_atoi2.c \
        ./commands/rev_rotate.c \
        ./commands/rotate.c \
        ./commands/sort_stacks.c \

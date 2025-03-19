@@ -5,6 +5,7 @@
 # include <limits.h> 
 # include "./libft/libft.h"
 # include "./printf/ft_printf.h"
+# include <stdio.h>
 
 typedef struct s_stack_node 
 {
@@ -23,10 +24,9 @@ int				check_string(char *str);
 int				check_duplicate(t_stack *a, int n);
 void			free_stack(t_stack **stack);
 void			free_errors(t_stack **a);
+long ft_atoi2(const char *str);
 
-
-void			init_stack_a(t_stack **a, char **argv); 
-
+void init_stack_a(t_stack **a, char **argv);
 
 void			init_nodes_a(t_stack *a, t_stack *b); 
 void			init_nodes_b(t_stack *a, t_stack *b); 
