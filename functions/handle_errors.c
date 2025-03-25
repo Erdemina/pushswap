@@ -1,15 +1,29 @@
-#include "../push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_errors.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eulutas <eulutas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 17:22:47 by eulutas           #+#    #+#             */
+/*   Updated: 2025/03/20 17:30:32 by eulutas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../push_swap.h"
 
 int	check_string(char *str)
 {
-	
 	if (!(str[0] == '+'
 			|| str[0] == '-'
 			|| (str[0] >= '0' && str[0] <= '9')))
-				{
-					return(1);
-				}
+	{
+		return (1);
+	}
+	if (str[0] == '+' || str[0] == '-')
+		str++;
+	if (str[0] == '\0')
+		return (1);
 	while (*str)
 	{
 		if (!(*str >= '0' && *str <= '9'))
@@ -18,30 +32,30 @@ int	check_string(char *str)
 	}
 	return (0);
 }
+
 int	check_duplicate(t_stack *a, int n)
 {
 	if (!a)
 		return (0);
 	while (a)
 	{
-		if (a->number == n){
+		if (a -> number == n)
+		{
 			return (1);
-	
 		}
 		a = a->next;
 	}
-	
 	return (0);
 }
-void free_stack(t_stack **stack)
+
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack *current;
+	t_stack	*current;
 
-	if(!stack)
-		return;
+	if (!stack)
+		return ;
 	current = *stack;
-
 	while (current)
 	{
 		tmp = current->next;
@@ -51,7 +65,8 @@ void free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
-void free_errors(t_stack **stack)
+
+void	free_errors(t_stack **stack)
 {
 	free_stack(stack);
 	ft_printf("Error\n");
