@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eulutas <eulutas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eulutas <eulutas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:23:01 by eulutas           #+#    #+#             */
-/*   Updated: 2025/03/20 17:36:53 by eulutas          ###   ########.fr       */
+/*   Updated: 2025/03/26 00:45:39 by eulutas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
+		return (0);
 	else if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');

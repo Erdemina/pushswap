@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eulutas <eulutas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eulutas <eulutas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:22:50 by eulutas           #+#    #+#             */
-/*   Updated: 2025/03/20 17:30:55 by eulutas          ###   ########.fr       */
+/*   Updated: 2025/03/26 17:13:38 by eulutas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	current_index(t_stack *stack)
 		else
 			stack->above_median = false;
 		stack = stack->next;
-		++i;
+		i++;
 	}
 }
 
@@ -37,23 +37,23 @@ static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack	*current_b;
 	t_stack	*target_node;
-	long	best_match_index;
+	long	best_match_number;
 
 	while (a)
 	{
-		best_match_index = LONG_MIN;
+		best_match_number = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->number < a->number
-				&& current_b->number > best_match_index)
+			if (current_b->number < a->number 
+				&& current_b->number > best_match_number)
 			{
-				best_match_index = current_b->number;
+				best_match_number = current_b->number;
 				target_node = current_b;
 			}
 			current_b = current_b->next;
 		}
-		if (best_match_index == LONG_MIN)
+		if (best_match_number == LONG_MIN)
 			a->target_node = find_max(b);
 		else
 			a->target_node = target_node;

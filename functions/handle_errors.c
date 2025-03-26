@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eulutas <eulutas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eulutas <eulutas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:22:47 by eulutas           #+#    #+#             */
-/*   Updated: 2025/03/20 17:30:32 by eulutas          ###   ########.fr       */
+/*   Updated: 2025/03/26 15:39:26 by eulutas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,16 @@ int	check_duplicate(t_stack *a, int n)
 void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack	*current;
 
 	if (!stack)
 		return ;
-	current = *stack;
-	while (current)
+	while (*stack)
 	{
-		tmp = current->next;
-		current->number = 0;
-		free(current);
-		current = tmp;
+		tmp = (*stack)->next;
+		(*stack)->number = 0;
+		free(*stack);
+		(*stack) = tmp;
 	}
-	*stack = NULL;
 }
 
 void	free_errors(t_stack **stack)

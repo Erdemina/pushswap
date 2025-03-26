@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eulutas <eulutas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eulutas <eulutas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:22:59 by eulutas           #+#    #+#             */
-/*   Updated: 2025/03/20 17:38:16 by eulutas          ###   ########.fr       */
+/*   Updated: 2025/03/26 16:00:48 by eulutas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <limits.h>
 # include "./libft/libft.h"
 # include "./printf/ft_printf.h"
-# include <stdio.h>
+# include <unistd.h>
 
 typedef struct s_stack_node
 {
