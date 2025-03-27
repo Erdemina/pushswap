@@ -6,7 +6,7 @@
 /*   By: eulutas <eulutas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:22:50 by eulutas           #+#    #+#             */
-/*   Updated: 2025/03/26 17:13:38 by eulutas          ###   ########.fr       */
+/*   Updated: 2025/03/26 21:26:09 by eulutas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	cost_analysis_a(t_stack *a, t_stack *b)
 			a->push_cost = len_a - (a->index);
 		if (a->target_node->above_median)
 			a->push_cost += a->target_node->index;
-		else
+		else if (!(a->target_node->above_median))
 			a->push_cost += len_b - (a->target_node->index);
 		a = a->next;
 	}
