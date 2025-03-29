@@ -11,7 +11,18 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+static void free_split(char **argv)
+{
+	int i;
 
+	i = 0;
+	while (argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
+}
 int main(int argc, char **argv)
 {
 	t_stack *a;
@@ -25,6 +36,7 @@ int main(int argc, char **argv)
 	{
 		argv = ft_split(argv[1], ' ');
 		init_stack_a(&a, argv);
+		free_split(argv);
 	}
 	else
 		init_stack_a(&a, &argv[1]);
@@ -38,5 +50,7 @@ int main(int argc, char **argv)
 			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
+	free_stack(&b);
+	
 	return (0);
 }
