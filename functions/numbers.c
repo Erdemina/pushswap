@@ -11,6 +11,19 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
+void free_numbers(char **numbers)
+{
+	int i;
+	i = 0;
+	while (numbers[i])
+	{
+		free(numbers[i]);
+		i++;
+	}
+	
+	free(numbers);
+
+}
 char *join_args(int argc, char **argv)
 {
 	int i;

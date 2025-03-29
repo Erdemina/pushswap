@@ -31,6 +31,9 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack;
 
+
+
+void free_numbers(char **numbers);
 char *join_args(int argc, char **argv);
 int check_string(char *str);
 int				check_duplicate(t_stack *a, int n);
