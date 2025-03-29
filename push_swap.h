@@ -18,6 +18,7 @@
 # include "./libft/libft.h"
 # include "./printf/ft_printf.h"
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct s_stack_node
 {
@@ -33,8 +34,7 @@ typedef struct s_stack_node
 
 
 
-void free_numbers(char **numbers);
-char *join_args(int argc, char **argv);
+
 int check_string(char *str);
 int				check_duplicate(t_stack *a, int n);
 void			free_stack(t_stack **stack);

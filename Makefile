@@ -22,7 +22,6 @@ SRCS = ./commands/push.c \
        ./functions/init_b_to_a.c \
        ./functions/stack_init.c \
        ./functions/stack_utils.c \
-       ./functions/numbers.c \
        ./push_swap.c
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)%.o)
