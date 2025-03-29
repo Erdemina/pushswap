@@ -12,22 +12,21 @@
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_stack *a;
+	t_stack *b;
+	char **numbers;
+	char *all_args;
 
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (0);
-	else if (argc == 2)
-	{
-		argv = ft_split(argv[1], ' ');
-		init_stack_a(&a, argv);
-	}
-	else
-		init_stack_a(&a, &argv[1]);
+	all_args = join_args(argc, argv);
+	numbers = ft_split(all_args, ' ');
+	free(all_args);
+	init_stack_a(&a, numbers);
 	if (!stack_sorted(a))
 	{
 		if (stack_size(a) == 2)
@@ -38,5 +37,6 @@ int	main(int argc, char **argv)
 			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }
